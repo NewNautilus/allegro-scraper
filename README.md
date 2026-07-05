@@ -1,296 +1,362 @@
-[Allegro Scraper](https://apify.com/parseforge/allegro-scraper?fpr=data)
+[Allegro Scraper](https://apify.com/automation-lab/allegro-scraper?fpr=data)
 
-![ParseForge Banner](https://images.apifyusercontent.com/RHzPvdHJ2joNXJHSWjeziGDTOTaycOsfmbNq9q8ZVRM/w:1800/cb:1/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1BhcnNlRm9yZ2UvYXBpZnktYXNzZXRzL21haW4vYmFubmVyLmpwZw.webp)
+Scrape product listings from **[Allegro.pl](https://allegro.pl)** — Poland's #1 e-commerce marketplace with over 125 million active listings. Extract prices, sellers, ratings, images, parameters, and delivery info from any search or category. Export to JSON, CSV, or Excel in minutes.
 
-# 🛒 Allegro.pl Polish Marketplace Scraper
+## What does Allegro.pl Product Scraper do?
 
-> 🚀 Collect product listings from Poland's largest e-commerce marketplace. Get titles, prices (PLN), sellers, ratings, review counts, shipping info, and images. Search by keyword with sorting options.
+Allegro.pl Product Scraper lets you **extract product listings at scale** from Poland's largest online marketplace. Just enter keywords or paste category URLs — the scraper handles pagination automatically and returns structured data for every product.
 
-> 🕒 Last updated: 2026-04-16
+- ✅ Search by keyword across all categories
+- ✅ Browse specific categories (e.g., laptops, shoes, electronics)
+- ✅ Filter by price range, product condition, and sort order
+- ✅ Extract complete product data: prices, sellers, images, ratings, shipping costs
+- ✅ Includes product parameters (brand, specs, dimensions)
+- ✅ Identifies sponsored vs. organic listings
+- ✅ No Allegro account or API key required
 
-Whether you are a seller monitoring competitor prices, a researcher analyzing the Polish e-commerce market, or a buyer looking for deals, this tool makes it easy to collect structured product data from Allegro.pl, Poland's largest online marketplace.
+Try it now: open the [Allegro.pl Product Scraper](https://apify.com/automation-lab/allegro-scraper) on Apify Store, enter a search keyword, and click Run.
 
-Get product titles, prices in PLN, seller information, ratings, review counts, shipping details, and images for thousands of listings. Search by keyword, browse by category, or paste any Allegro listing URL with your filters applied.
+## Who Is It For?
 
-| Target | Allegro.pl product listings |
-| --- | --- |
-| Use Cases | Price monitoring, market research, competitor analysis, deal finding, e-commerce intelligence |
+### 📊 E-commerce Analysts & Researchers
 
----
+- Track competitor pricing across thousands of products
+- Monitor price fluctuations over time with scheduled runs
+- Research market positioning in specific product categories
 
-## 📋 What it does
+### 🛍️ Procurement & Sourcing Teams
 
-- 🛍️ Collects product titles, prices, and structured numeric values from thousands of listings
-- 💰 Extracts prices in Polish Zloty (PLN) with both formatted text and numeric values
-- 🏪 Returns seller names and ratings for each listing
-- ⭐ Captures product ratings and review counts for quality assessment
-- 📦 Identifies free shipping offers and Allegro Smart! eligible items
-- 📸 Extracts product images and thumbnails from every listing
+- Compare supplier prices for bulk purchasing decisions
+- Find the best deals across millions of listings
+- Build supplier shortlists based on seller ratings and reviews
 
-Each product record includes up to 12+ data fields ready for analysis. The scraper handles Allegro's site protection through browser-based collection, ensuring reliable data extraction across all product categories.
+### 🤖 Developers & Data Engineers
 
-💡 **Why it matters**: Allegro.pl hosts millions of products across all categories. Manual price tracking is impractical when monitoring competitor pricing or market trends. This scraper automates the collection of product data so you can focus on pricing strategy and market analysis.
+- Build price comparison platforms or shopping apps
+- Power recommendation engines with real product data
+- Feed business intelligence dashboards with fresh market data
 
----
+### 📈 Marketing & SEO Teams
 
-## 🎬 Full Demo
+- Analyze competitor product titles and descriptions
+- Track sponsored vs. organic product performance
+- Research consumer demand signals from sales volume
 
-🚧 Coming soon
+## Why use this Allegro.pl Scraper?
 
----
+- 🚀 **Fast extraction** — 60-75 products per page in under 30 seconds
+- 📦 **Rich data** — 20+ fields per product including parameters, images, shipping
+- 🔄 **Auto-pagination** — crawls as many pages as you need, up to 100 pages per query
+- 🎯 **Flexible input** — keyword search, category URLs, price filters, condition filter
+- 💾 **Multiple export formats** — JSON, CSV, Excel, XML via Apify's built-in tools
+- 🔗 **API-ready** — integrate with Google Sheets, Zapier, Make, and 5,000+ apps
+- 🛡️ **Resilient** — session rotation and retry logic handles bot detection automatically
 
-## ⚙️ Input
+## What data can you extract from Allegro.pl?
 
-| Field | Type | Description |
+| 🏷️ Product Info | 💰 Pricing | 👤 Seller Info |
 | --- | --- | --- |
-| Start URL | Text | Allegro.pl listing or search page URL. Browse allegro.pl, apply filters, and paste the URL. |
-| Max Items | Number | Free users: limited to 10 items. Paid users: up to 1,000,000. |
-| Search Query | Text | Search by keyword (e.g., "laptop", "iPhone 15"). Overrides Start URL. |
-| Sort By | Select | Relevance, Best Selling, Price Low to High, Price High to Low, or Newest |
+| Product ID | Current price (PLN) | Seller login |
+| Title | Original/sale price | Seller URL |
+| Category path | Currency | Seller rating (%) |
+| Condition (new/used) | Delivery price | Super Seller badge |
+| Product images (up to 10) | Free delivery flag | Location |
+| Product parameters |  |  |
 
-**Example 1: Search for laptops sorted by price**
+| 📊 Engagement | 🏭 Logistics | 🔍 Search Context |
+| --- | --- | --- |
+| Rating (0-5) | Delivery price | Search query |
+| Review count | Free delivery | Sponsored flag |
+|  |  | Scraped timestamp |
 
-```
-{
-  "searchQuery": "laptop",
-  "sortBy": "p",
-  "maxItems": 50
-}
-```
+## How much does it cost to scrape Allegro.pl?
 
-**Example 2: Custom Allegro URL**
+This Actor uses **pay-per-event (PPE) pricing** — you pay only for products scraped, nothing for failed pages or overhead.
 
-```
-{
-  "startUrl": "https://allegro.pl/listing?string=iPhone+15",
-  "maxItems": 100
-}
-```
+|  | Free plan | Starter ($29/mo) | Scale ($199/mo) | Business ($999/mo) |
+| --- | --- | --- | --- | --- |
+| **Per product** | $0.00345 | $0.003 | $0.00234 | $0.0018 |
+| **1,000 products** | $3.45 | $3.00 | $2.34 | $1.80 |
+| **10,000 products** | $34.50 | $30.00 | $23.40 | $18.00 |
 
-> ⚠️ **Good to Know**: Free users are limited to 10 items per run. Search Query overrides Start URL when both are provided. The scraper uses a browser to handle Allegro's site protection, so collection speed is approximately 10-20 products per minute.
+Plus a one-time **$0.005 start fee** per run (covers browser startup cost).
 
----
+**Real-world cost examples:**
 
-## 📊 Output
-
-### 🧾 Schema
-
-| Emoji | Field | Type | Description |
+| Query | Products | Duration | Cost (Free tier) |
 | --- | --- | --- | --- |
-| 🖼️ | imageUrl | String | Product photo URL |
-| 📋 | title | String | Full product title |
-| 🔗 | url | String | Product listing URL on Allegro |
-| 💰 | price | Number | Price (numeric, in PLN) |
-| 💵 | priceText | String | Price as displayed on the page |
-| 💱 | currency | String | Currency code (PLN) |
-| 🏪 | seller | String | Seller name |
-| ⭐ | rating | String | Product rating |
-| 📝 | reviewCount | String | Number of reviews |
-| 📦 | freeShipping | Boolean | Whether free shipping is available |
-| 🏷️ | isSmart | Boolean | Whether eligible for Allegro Smart! |
-| 📅 | scrapedAt | String | Timestamp when data was collected |
-| ⚠️ | error | String | Error message if extraction failed |
+| "laptop" (1 page) | ~74 | ~30s | ~$0.26 |
+| "iPhone" (3 pages) | ~200 | ~90s | ~$0.69 |
+| Category browse (5 pages) | ~350 | ~150s | ~$1.21 |
 
- 
- 
- 
+💡 Free plan users get **$5 credit** — enough for ~1,400 products.
 
----
+## How to scrape Allegro.pl products
 
-## ✨ Why choose Allegro.pl Scraper
+1. Open [Allegro.pl Product Scraper](https://apify.com/automation-lab/allegro-scraper) on Apify Store
+2. Click **Try for free**
+3. In **Search Queries**, enter keywords (e.g., `laptop gaming`, `iPhone 15`)
+4. Set **Max Products per Search** (start with 20-50 to test)
+5. Optionally filter by price range, condition, or sort order
+6. Click **Start** and wait ~30 seconds
+7. Download results in JSON, CSV, or Excel from the **Dataset** tab
 
-| Feature | Details |
-| --- | --- |
-| 🛒 Poland's largest marketplace | Access millions of product listings across all categories |
-| 💰 Structured pricing | Numeric price values plus formatted display text in PLN |
-| 🏪 Seller data | Seller names and ratings for every listing |
-| ⭐ Review data | Product ratings and review counts for quality comparison |
-| 📦 Shipping info | Free shipping and Allegro Smart! eligibility flags |
-| 🔍 Flexible search | Search by keyword, browse categories, or paste any Allegro URL |
-| 📦 Multiple exports | Download as JSON, CSV, or Excel |
+### Input examples
 
-> 📊 **Collects product data from millions of listings across all Allegro categories**
+**Keyword search (most common):**
 
----
+```
+{
+    "searchQueries": ["laptop gaming", "tablet samsung"],
+    "maxItemsPerQuery": 100,
+    "sortBy": "relevance"
+}
+```
 
-## ✨ Why choose this Actor
+**Price-filtered search:**
 
-|  | Capability |
-| --- | --- |
-| 🎯 | **Built for the job.** Scoped specifically to this data source so you skip the parser engineering entirely. |
-| 🔖 | **Structured output.** Clean, typed fields ready for analysis, dashboards, or downstream pipelines. |
-| ⚡ | **Fast.** Optimized request patterns return results in seconds, not minutes. |
-| 🔁 | **Always fresh.** Every run pulls live data, so the dataset reflects the source as of run time. |
-| 🌐 | **No infra to manage.** Apify handles proxies, retries, scaling, scheduling, and storage. |
-| 🛡️ | **Reliable.** Battle-tested across many runs and edge cases, with graceful error handling. |
-| 🚫 | **No code required.** Configure in the UI, run from CLI, schedule via cron, or call from any language with the Apify SDK. |
+```
+{
+    "searchQueries": ["buty sportowe"],
+    "maxItemsPerQuery": 200,
+    "minPrice": 100,
+    "maxPrice": 500,
+    "condition": "new",
+    "sortBy": "price-asc"
+}
+```
 
-> 📊 Production-grade structured data without the engineering overhead of building and maintaining your own scraper.
+**Category URL scraping:**
 
----
+```
+{
+    "startUrls": [
+        {"url": "https://allegro.pl/kategoria/laptopy-491"},
+        {"url": "https://allegro.pl/kategoria/smartfony-i-telefony-komorkowe-165"}
+    ],
+    "maxItemsPerQuery": 300
+}
+```
 
-## 📈 How it compares
+## Input parameters
 
-| Feature | Allegro.pl Scraper | Other Tools |
-| --- | --- | --- |
-| Batch collection (up to 1M) | Yes | Limited |
-| Structured numeric prices | Yes | Text only |
-| Seller ratings | Yes | Partial |
-| Smart! eligibility flag | Yes | No |
-| Free shipping indicator | Yes | No |
-| Multiple sort options | Yes | Partial |
-| Category URL support | Yes | Keyword only |
-| Automated scheduling | Yes | Varies |
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| `searchQueries` | string[] | — | Keywords to search on Allegro.pl |
+| `startUrls` | URL[] | — | Direct Allegro listing or category URLs |
+| `maxItemsPerQuery` | integer | 100 | Max products per query/URL |
+| `minPrice` | integer | — | Min price filter in PLN |
+| `maxPrice` | integer | — | Max price filter in PLN |
+| `condition` | string | `all` | Product condition: `all`, `new`, `used` |
+| `sortBy` | string | `relevance` | Sort: `relevance`, `price-asc`, `price-desc`, `newest` |
 
----
+## Output examples
 
-## 🚀 How to use
+Each product is saved as a JSON object:
 
-1. **Sign up** - [Create a free account with $5 credit](https://console.apify.com/sign-up?fpr=vmoqkp)
-2. **Find the tool** - Search for "Allegro.pl Scraper" in the Apify Store
-3. **Enter your search** - Type a keyword or paste an Allegro URL
-4. **Set preferences** - Choose sort order and max items
-5. **Export data** - Download as JSON, CSV, or Excel
+```
+{
+    "id": "17808132516",
+    "url": "https://allegro.pl/oferta/hp-victus-15-gaming-ryzen-7-17808132516",
+    "title": "Laptop HP Victus 15 15,6\" AMD Ryzen 7 16 GB / 512 GB szary",
+    "price": 3551,
+    "priceOriginal": null,
+    "currency": "PLN",
+    "seller": "INFLOO",
+    "sellerUrl": "https://allegro.pl/uzytkownik/INFLOO",
+    "sellerRating": 98.6,
+    "imageUrl": "https://a.allegroimg.com/s720/11a3b1/...",
+    "images": [
+        "https://a.allegroimg.com/s720/11a3b1/...",
+        "https://a.allegroimg.com/s360/11b9d1/..."
+    ],
+    "condition": "new",
+    "isSponsored": false,
+    "isSuperSeller": true,
+    "reviewCount": 24,
+    "rating": 4.8,
+    "deliveryPrice": 10.49,
+    "deliveryFree": false,
+    "category": "Elektronika > Komputery > Laptopy",
+    "location": "",
+    "parameters": {
+        "Marka": "HP",
+        "System operacyjny": "Windows 11 Home",
+        "Wielkość pamięci RAM": "16 GB",
+        "Pojemność dysku": "512 GB",
+        "Seria procesora": "AMD Ryzen 7",
+        "Przekątna ekranu": "15.6\""
+    },
+    "searchQuery": "laptop gaming",
+    "scrapedAt": "2026-04-03T02:41:01.609Z"
+}
+```
 
----
+## Tips for best results
 
-## 💼 Business use cases
+- 🔢 **Start small** — test with 20-50 products first to verify the data meets your needs
+- 🌍 **Polish keywords work better** — use Polish terms (e.g., "buty sportowe" instead of "sport shoes") for more relevant results
+- 📋 **Use category URLs** for comprehensive category coverage (up to 100 pages × 74 items)
+- ⏱️ **Schedule runs** for price monitoring — Apify's scheduler runs actors automatically
+- 💰 **Filter by price** to focus on the exact range you care about
+- 🔄 **Sort by newest** to track new listings in a category
+- 📊 **Export to Google Sheets** via Apify's built-in integration for team access
 
-| 🏪 **Sellers** Monitor competitor pricing and product positioning on Poland's largest marketplace to optimize your listings | 📊 **Market Researchers** Analyze product trends, pricing patterns, and market dynamics across the Polish e-commerce landscape |
-| --- | --- |
-| 💰 **Price Trackers** Build automated price monitoring for products across categories with daily scheduled runs | 🏢 **Brands** Monitor how your products are being resold and at what prices by third-party sellers |
+## Integrations
 
----
+**Allegro.pl Product Scraper → Google Sheets**
+Schedule daily runs and append new products to a Google Sheet for team price monitoring. Connect via Apify's Google Sheets integration in the actor settings.
 
----
+**Allegro.pl Product Scraper → Slack/Discord**
+Set up a webhook to alert your team when prices drop below a threshold. Combine with Make or Zapier to filter and format the notifications.
 
-## 🌟 Beyond business use cases
+**Allegro.pl Product Scraper → Price Comparison Database**
+Run the scraper for multiple product categories and store results in Apify Dataset or export to a database. Use the `id` field to track product changes over time.
 
-Data like this powers more than commercial workflows. The same structured records support research, education, civic projects, and personal initiatives.
+**Allegro.pl Product Scraper → Make/Zapier Automation**
+Trigger automated workflows from new product listings — email alerts, CRM updates, inventory management.
 
-| ### 🎓 Research and academia     - Empirical datasets for papers, thesis work, and coursework - Longitudinal studies tracking changes across snapshots - Reproducible research with cited, versioned data pulls - Classroom exercises on data analysis and ethical scraping | ### 🎨 Personal and creative     - Side projects, portfolio demos, and indie app launches - Data visualizations, dashboards, and infographics - Content research for bloggers, YouTubers, and podcasters - Hobbyist collections and personal trackers |
-| --- | --- |
-| ### 🤝 Non-profit and civic     - Transparency reporting and accountability projects - Advocacy campaigns backed by public-interest data - Community-run databases for local issues - Investigative journalism on public records | ### 🧪 Experimentation     - Prototype AI and machine-learning pipelines with real data - Validate product-market hypotheses before engineering spend - Train small domain-specific models on niche corpora - Test dashboard concepts with live input |
+**Scheduled Price Monitoring**
+Use Apify's scheduler (cron `0 9 * * *`) to run the scraper daily and track price trends over weeks or months.
 
-## 🤖 Ask an AI assistant about this scraper
+## API Usage
 
-Open a ready-to-send prompt about this ParseForge actor in the AI of your choice:
-
-- 💬 [**ChatGPT**](https://chat.openai.com/?q=How%20do%20I%20use%20the%20Allegro.pl%20Polish%20Marketplace%20Scraper%20by%20ParseForge%20on%20Apify%3F%20Show%20me%20input%20examples%2C%20output%20fields%2C%20common%20use%20cases%2C%20and%20how%20to%20integrate%20it%20into%20a%20workflow.)
-- 🧠 [**Claude**](https://claude.ai/new?q=How%20do%20I%20use%20the%20Allegro.pl%20Polish%20Marketplace%20Scraper%20by%20ParseForge%20on%20Apify%3F%20Show%20me%20input%20examples%2C%20output%20fields%2C%20common%20use%20cases%2C%20and%20how%20to%20integrate%20it%20into%20a%20workflow.)
-- 🔍 [**Perplexity**](https://perplexity.ai/search?q=How%20do%20I%20use%20the%20Allegro.pl%20Polish%20Marketplace%20Scraper%20by%20ParseForge%20on%20Apify%3F%20Show%20me%20input%20examples%2C%20output%20fields%2C%20common%20use%20cases%2C%20and%20how%20to%20integrate%20it%20into%20a%20workflow.)
-- 🅒 [**Copilot**](https://copilot.microsoft.com/?q=How%20do%20I%20use%20the%20Allegro.pl%20Polish%20Marketplace%20Scraper%20by%20ParseForge%20on%20Apify%3F%20Show%20me%20input%20examples%2C%20output%20fields%2C%20common%20use%20cases%2C%20and%20how%20to%20integrate%20it%20into%20a%20workflow.)
-
-## ❓ Frequently Asked Questions
-
-### 💳 Do I need a paid Apify plan to run this actor?
-
-No. You can start right now on the free Apify plan, which includes **$5 in free monthly credit**. That is enough to run this actor several times and explore the output before committing to anything. Paid plans unlock higher limits, more concurrent runs, and larger datasets. [Create a free Apify account here](https://console.apify.com/sign-up?fpr=vmoqkp) to get started.
-
-### 🚨 What happens if my run fails or returns no results?
-
-Failed runs are not charged. If the source site changes, proxies get rate-limited, or a specific input matches nothing, re-run the actor or open our [contact form](https://tally.so/r/BzdKgA) and we will investigate. You can also check the run log in the Apify console to see why the run stopped.
-
-### 📏 How many items can I scrape per run?
-
-Free users are limited to **10 items per run** so you can preview the output and confirm the actor works for your use case. Paid users can raise `maxItems` up to **1,000,000** per run. [Upgrade here](https://console.apify.com/sign-up?fpr=vmoqkp) if you need full scale.
-
-### 🕒 How fresh is the data?
-
-Every run fetches live data at the moment of execution. There is no cache or delay: the records you get reflect what the source returned at that moment. Schedule the actor to maintain a rolling snapshot of the data you need.
-
-### 🧑‍💻 Can I call this actor from my own code?
-
-Yes. Apify exposes every actor as a REST endpoint and ships first-class SDKs for [Node.js](https://docs.apify.com/sdk/js) and [Python](https://docs.apify.com/sdk/python). You can start a run, read the dataset, and handle webhooks from your own app in a few lines. All you need is your Apify API token.
-
-### 📤 How do I export the data?
-
-Every Apify dataset can be downloaded in one click from the console as CSV, JSON, JSONL, Excel, HTML, XML, or RSS. You can also pull results programmatically via the [Apify API](https://docs.apify.com/api/v2) or stream them into BigQuery, S3, and other destinations through built-in integrations.
-
-### 📅 Can I schedule the actor to run automatically?
-
-Yes. Use the Apify scheduler to run the actor on any cadence, from hourly to monthly. Results are saved to your dataset and can be delivered to webhooks, email, Slack, cloud storage, or automation tools such as Zapier and Make.
-
----
-
-## 🔌 Automating with code
-
-**Node.js example:**
+### Node.js
 
 ```
 import { ApifyClient } from 'apify-client';
+
 const client = new ApifyClient({ token: 'YOUR_API_TOKEN' });
-const run = await client.actor("parseforge/allegro-scraper").call({
-  searchQuery: "laptop",
-  sortBy: "p",
-  maxItems: 50
+
+const run = await client.actor('automation-lab/allegro-scraper').call({
+    searchQueries: ['laptop gaming'],
+    maxItemsPerQuery: 100,
+    sortBy: 'price-asc',
 });
+
 const { items } = await client.dataset(run.defaultDatasetId).listItems();
-console.log(items);
+console.log(`Scraped ${items.length} products`);
 ```
 
-**Python example:**
+### Python
 
 ```
 from apify_client import ApifyClient
-client = ApifyClient("YOUR_API_TOKEN")
-run = client.actor("parseforge/allegro-scraper").call(run_input={
-    "searchQuery": "laptop",
-    "sortBy": "p",
-    "maxItems": 50
+
+client = ApifyClient(token='YOUR_API_TOKEN')
+
+run = client.actor('automation-lab/allegro-scraper').call(run_input={
+    'searchQueries': ['laptop gaming'],
+    'maxItemsPerQuery': 100,
+    'sortBy': 'price-asc',
 })
-items = list(client.dataset(run["defaultDatasetId"]).iterate_items())
-print(items)
+
+dataset = client.dataset(run['defaultDatasetId'])
+for item in dataset.iterate_items():
+    print(f"{item['title']}: {item['price']} PLN")
 ```
 
-See the [Apify API docs](https://docs.apify.com/api/v2) for more integration options.
+### cURL
 
-## 🔌 Integrate with your tools
+```
+curl -X POST "https://api.apify.com/v2/acts/automation-lab~allegro-scraper/runs?token=YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "searchQueries": ["laptop gaming"],
+    "maxItemsPerQuery": 100,
+    "sortBy": "price-asc"
+  }'
+```
 
-- [Make](https://docs.apify.com/platform/integrations/make) - Automate product monitoring workflows
-- [Zapier](https://docs.apify.com/platform/integrations/zapier) - Get alerts for price changes
-- [Slack](https://docs.apify.com/platform/integrations/slack) - Get notified about new listings
-- [Google Drive](https://docs.apify.com/platform/integrations/drive) - Export product data to spreadsheets
-- [Airbyte](https://docs.apify.com/platform/integrations/airbyte) - Data pipeline integration
-- [GitHub](https://docs.apify.com/platform/integrations/github) - Version control integration
+## Use with AI agents via MCP
 
----
+Allegro.pl Product Scraper is available as a tool for AI assistants that support the [Model Context Protocol (MCP)](https://docs.apify.com/platform/integrations/mcp).
 
-## 🔌 Integrate with any app
+Add the Apify MCP server to your AI client — this gives you access to all Apify actors, including this one:
 
-Allegro.pl Polish Marketplace Scraper connects to any cloud service via [Apify integrations](https://apify.com/integrations):
+### Setup for Claude Code
 
-- [**Make**](https://docs.apify.com/platform/integrations/make) - Automate multi-step workflows
-- [**Zapier**](https://docs.apify.com/platform/integrations/zapier) - Connect with 5,000+ apps
-- [**Slack**](https://docs.apify.com/platform/integrations/slack) - Get run notifications in your channels
-- [**Airbyte**](https://docs.apify.com/platform/integrations/airbyte) - Pipe results into your warehouse
-- [**GitHub**](https://docs.apify.com/platform/integrations/github) - Trigger runs from commits and releases
-- [**Google Drive**](https://docs.apify.com/platform/integrations/drive) - Export datasets straight to Sheets
+```
+$claude mcp add --transport http apify "https://mcp.apify.com?tools=automation-lab/allegro-scraper"
+```
 
-You can also use webhooks to trigger downstream actions when a run finishes. Push fresh data into your product backend, or alert your team in Slack.
+### Setup for Claude Desktop, Cursor, or VS Code
 
----
+Add this to your MCP config file:
 
-## 🔗 Recommended Actors
+```
+{
+    "mcpServers": {
+        "apify": {
+            "url": "https://mcp.apify.com?tools=automation-lab/allegro-scraper"
+        }
+    }
+}
+```
 
-| Actor | Description |
-| --- | --- |
-| [HubSpot Marketplace Scraper](https://apify.com/parseforge/hubspot-marketplace-scraper) | Scrape marketplace app listings from HubSpot |
-| [AWS Marketplace Scraper](https://apify.com/parseforge/aws-marketplace-scraper) | Collect cloud marketplace product data |
-| [Stripe App Marketplace Scraper](https://apify.com/parseforge/stripe-marketplace-scraper) | Extract Stripe marketplace app data |
-| [Flippa Scraper](https://apify.com/parseforge/flippa-scraper) | Online business marketplace data |
-| [IndiaMART Scraper](https://apify.com/parseforge/indiamart-scraper) | Collect B2B supplier and product data from India |
+Your AI assistant will use OAuth to authenticate with your Apify account on first use.
 
-Browse our complete collection of [data extraction tools](https://apify.com/parseforge) for more.
+### Example prompts
 
----
+Once connected, try asking your AI assistant:
 
-## 🆘 Need Help?
+- "Use automation-lab/allegro-scraper to find the 50 cheapest new iPhone 15 listings on Allegro.pl and give me a price analysis"
+- "Scrape 200 laptop products from Allegro.pl category for laptops, then identify the top 10 sellers by rating"
+- "Get Allegro.pl gaming accessories priced between 50-300 PLN and export them to a spreadsheet"
 
-- Check the FAQ section above for common questions
-- Visit the [Apify documentation](https://docs.apify.com) for platform guides
-- Contact us to request a new scraper, propose a custom project, or report an issue at [Tally contact form](https://tally.so/r/BzdKgA)
+Learn more in the [Apify MCP documentation](https://docs.apify.com/platform/integrations/mcp).
 
----
+## Legality: Is It Legal to Scrape Allegro.pl?
 
-> **Disclaimer**: This Actor is an independent tool and is not affiliated with, endorsed by, or connected to Allegro.pl, Allegro Group, or any seller on the platform. It accesses only publicly available data.
+Allegro.pl's product listings are publicly accessible to anyone browsing the web without authentication. This scraper only collects publicly visible data — the same information any visitor would see.
+
+Web scraping public data is generally permissible under:
+
+- The **CJEU Ryanair v. PR Aviation ruling** — public data scraping for legitimate business purposes is generally lawful
+- **GDPR** — we collect only publicly visible product and seller data, not personal user information
+- Standard **fair use principles** — data is used for analysis, not reproduction
+
+We recommend:
+
+- Using the data for legitimate business purposes (price research, market analysis)
+- Not reproducing entire product listings verbatim without adding value
+- Respecting Allegro's rate limits (built into the actor automatically)
+- Reviewing [Allegro's Terms of Service](https://allegro.pl/regulaminy) for your specific use case
+
+**This tool is provided for legitimate research and business intelligence use.** Apify's platform complies with ethical scraping standards and proxy rotation to minimize impact on target servers.
+
+## FAQ
+
+**How many products can I scrape from Allegro.pl?**
+Allegro's search returns up to 100 pages × ~74 products = ~7,400 results per query. For comprehensive category coverage, use category URLs with `maxItemsPerQuery` set to 7400 or higher.
+
+**How fast is the scraper?**
+Each page takes approximately 15-30 seconds including browser startup. Rate: ~150-250 products per minute depending on query complexity.
+
+**How much does it cost to scrape 10,000 Allegro products?**
+At Free tier: ~$34.50. At Starter plan: ~$30.00. Higher-tier subscribers get volume discounts.
+
+**Why are some products showing without a price?**
+This typically means the listing has variable pricing (e.g., the price depends on selected variants like size/color). The `price` field shows the main price; check the product URL for full details.
+
+**Why is the category field sometimes empty?**
+Category information is derived from Allegro's internal category mapping. Some broad search queries may not associate products with a specific category path.
+
+**Why do I get "Bot detection triggered" errors?**
+This happens when Allegro's Cloudflare protection blocks the initial request. The actor automatically retries with session rotation — typically 2-3 retries are needed. If this happens frequently, try using fewer concurrent requests (already set to 1) or contact support.
+
+**Can I scrape used items only?**
+Yes! Set `condition` to `"used"` in the input. This applies the `stan=used` filter to Allegro's search.
+
+**Why are some URLs redirecting through allegro.pl/events/clicks?**
+The scraper automatically strips Allegro's tracking redirect wrappers to return clean, direct product URLs.
+
+## Other e-commerce scrapers
+
+Check out our other automation-lab scrapers for related platforms:
+
+- 🛒 [Amazon Scraper](https://apify.com/automation-lab/amazon-scraper) — products, prices, reviews from Amazon
+- 🏪 [eBay Scraper](https://apify.com/automation-lab/ebay-scraper) — listings from eBay marketplace
+- 🎨 [Etsy Scraper](https://apify.com/automation-lab/etsy-scraper) — handmade products from Etsy
+- 🏬 [Walmart Scraper](https://apify.com/automation-lab/walmart-scraper) — products from Walmart.com
+- 🛍️ [Best Buy Scraper](https://apify.com/automation-lab/bestbuy-scraper) — electronics from Best Buy
